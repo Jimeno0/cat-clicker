@@ -3,5 +3,6 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [])
   .controller('catClicker', function catClicker() {
-  this.clickCounter = 0;
+  this.counterCat1 = 0;
+  this.counterCat2 = 0;
 });
