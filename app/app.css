@@ -29,7 +29,20 @@
   padding: 0;
 }
 
-#catImgDivimg {
+#catImgId {
     max-width: 100%;
     height: auto;
+    opacity: 0.5;
+}
+
+#clicksCounterId{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin:1%;
+  padding: 1%;
+  background-color: #03A9F4;
+  color: white;
+  box-shadow: 0px 5px 5px grey;
+
 }
