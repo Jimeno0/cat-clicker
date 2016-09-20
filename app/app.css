@@ -37,6 +37,7 @@
 
 .clicksCounter{
   position: absolute;
+  z-index: 1;
   top: 0px;
   left: 0px;
   margin:1%;
@@ -53,4 +54,9 @@
 
 .flex {
   display: flex;
+}
+
+.sidePanel{
+  width: 33%;
+  box-shadow: 0px 10px 10px grey;
 }
