@@ -22,6 +22,21 @@
   <![endif]-->
   <div class = "flex">
     <div class = "sidePanel">
+    <button ng-click="cc.toggleForm();">Admin</button>
+
+    <form id = "formId" ng-hide="cc.hideForm">
+      Cat name:<br>
+      <input type="text" ng-model="cc.newCat.name"><br>
+      Image Url:<br>
+      <input type="text" ng-model="cc.newCat.src" value = "http://2.bp.blogspot.com/-pATX0YgNSFs/VP-82AQKcuI/AAAAAAAALSU/Vet9e7Qsjjw/s1600/Cat-hd-wallpapers.jpg">
+      Number of clicks:<br>
+      <input type="text" ng-model="cc.newCat.count">
+      <br><br>
+      <p>{{cc.alert}}</p>
+      <br>
+      <button ng-click="cc.pushCat(cc.newCat);">Save</button>
+      <button ng-click="cc.clear();cc.toggleForm();">cancel</button>
+    </form>
     <ul>
       <li ng-repeat ="cat in cc.cats">
         <button ng-click="cc.selectCat(cat);">{{cat.name}}</button>

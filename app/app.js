@@ -7,7 +7,13 @@ angular.module('myApp', [])
   self.counterCat1 = 0;
   self.counterCat2 = 0;
   self.selected = null;
+  self.toggleForm = toggleForm;
+  self.hideForm = true;
   self.selectCat =  selectCat;
+  self.newCat = {};
+  self.clear = clear;
+  self.pushCat = pushCat;
+
   self.cats = [
   { id:1,
     name:'Coco',
@@ -30,12 +36,38 @@ angular.module('myApp', [])
     src:'/cat-clicker/images/felix.jpg',
     count:0}
   ];
-
+  
+  self.selected = self.cats[0];
   function selectCat (cat) {
     self.selected = cat;
-    console.log(cat.name);
 
   }
+  function toggleForm () {
+    self.hideForm = self.hideForm === false ? true: false;
+
+  }
+
+  function clear () {
+    self.newCat = {};
+
+  }
+
+  function pushCat () {
+
+    if (self.newCat.name && self.newCat.src && self.newCat.count) {
+      self.cats.push(self.newCat);
+      clear();
+      toggleForm();
+      self.alert = "";
+    }
+    else{
+      self.alert = "Fill all field before save";
+    }
+
+
+  }
+
+  
 
 
 });
